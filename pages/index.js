@@ -1,8 +1,41 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
 
-export default function Home() {
+import { GraphQLClient } from "graphql-request";
+import { gql } from "graphql-request";
+
+const hygraph = new GraphQLClient(
+  "https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/cl9s32g1q2oun01td822bh5s6/master"
+);
+
+const QUERY = gql`
+  {
+    projects {
+      id
+      title
+      slug
+      tags
+      mainImage {
+        url
+        width
+        height
+      }
+    }
+  }
+`;
+
+export async function getStaticProps() {
+  const { projects } = await hygraph.request(QUERY);
+
+  return {
+    props: {
+      projects,
+    },
+  };
+}
+
+export default function Home({ projects }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -12,6 +45,17 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <div>
+          {projects.map(({ id, title, tags, mainImage }) => (
+            <><img src={mainImage.url} alt="" /><><h2 key={id}>{title}</h2><ul>
+              {tags.map((tag) => (
+                <li key={tag}>{tag}</li>
+              ))}
+            </ul></></>
+          ))}
+        </div>
+
+
         <h1>Avidu</h1>
       </main>
 
@@ -21,12 +65,12 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
+  );
 }

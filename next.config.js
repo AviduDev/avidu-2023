@@ -9,5 +9,6 @@ module.exports = {
   images: {
     loader: 'cloudinary',
     path: '/',
+    domains: ['media.graphassets.com'],
   },
 }
