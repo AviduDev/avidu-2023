@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
 
 import { GraphQLClient } from "graphql-request";
 import { gql } from "graphql-request";
@@ -46,12 +47,13 @@ export default function Home({ projects }) {
 
       <main className={styles.main}>
         <div>
-          {projects.map(({ id, title, tags, mainImage }) => (
-            <><img src={mainImage.url} alt="" /><><h2 key={id}>{title}</h2><ul>
-              {tags.map((tag) => (
-                <li key={tag}>{tag}</li>
-              ))}
-            </ul></></>
+          {projects.map(({ id, title, mainImage, slug, tags }) => (
+            <ul key={slug}>
+              <li>
+                <Link href={`/projects/${slug}`}>{title}</Link>
+                <img src={mainImage.url} alt={title} width={500} />
+              </li>
+            </ul>
           ))}
         </div>
 
