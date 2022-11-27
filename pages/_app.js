@@ -1,7 +1,18 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
+import Navbar from "../components/Navbar";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+import { AnimatePresence } from "framer-motion";
+
+
+function MyApp({ Component, pageProps, router }) {
+  return (
+    <div>
+      <AnimatePresence initial={false} >
+        <Navbar />
+        <Component key={router.route} {...pageProps} />
+      </AnimatePresence>
+    </div>
+  );
 }
 
-export default MyApp
+export default MyApp;

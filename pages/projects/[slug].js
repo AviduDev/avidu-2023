@@ -1,4 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
+import styles from "../../styles/Projects.module.css";
+
+import { motion } from "framer-motion";
 
 import { GraphQLClient } from "graphql-request";
 
@@ -60,17 +64,30 @@ export async function getStaticPaths() {
   };
 }
 
-
-
 export default function Project({ project }) {
   return (
-    <div>
+    <div className={styles.wrapper}>
       <Head></Head>
-      <main>
+      <main className={styles.container}>
         <div>
-          <h1>This is Project Details Page</h1>
-          <img src={project.mainImage.url} width={500} alt={project.name} />
-          <h2>{project.title}</h2>
+          <div className={styles.image_container}>
+            <motion.img
+              className={styles.project_image}
+              initial={{ scale: 1.3 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              src={project.mainImage.url}
+              width={500}
+              alt={project.name}
+            />
+          </div>
+          <div className={styles.title_container}>
+            <motion.h2
+            initial={{ y: "100%", opacity: "0" }}
+            animate={{ y: "0%", opacity: "1" }}
+            transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }} 
+            className={styles.title}>{project.title}</motion.h2>
+          </div>
           <ul>
             {project.tags.map((tag) => (
               <li key={tag}>{tag}</li>
@@ -79,5 +96,5 @@ export default function Project({ project }) {
         </div>
       </main>
     </div>
-  )
+  );
 }

@@ -3,6 +3,8 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 
+import { motion } from "framer-motion";
+
 import { GraphQLClient } from "graphql-request";
 import { gql } from "graphql-request";
 
@@ -50,15 +52,17 @@ export default function Home({ projects }) {
           {projects.map(({ id, title, mainImage, slug, tags }) => (
             <ul key={slug}>
               <li>
-                <Link href={`/projects/${slug}`}>{title}</Link>
+                <Link href={`/projects/${slug}`}>{title}</Link> <br />
                 <img src={mainImage.url} alt={title} width={500} />
               </li>
             </ul>
           ))}
         </div>
 
-
         <h1>Avidu</h1>
+        <h2 id="about">About Me</h2>
+        <h2 id="work">Work</h2>
+        <h2 id="contact">Contact</h2>
       </main>
 
       <footer className={styles.footer}>
