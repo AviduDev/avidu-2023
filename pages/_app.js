@@ -2,15 +2,16 @@ import "../styles/globals.css";
 import Navbar from "../components/Navbar";
 
 import { AnimatePresence } from "framer-motion";
+import { AnimateSharedLayout } from "framer-motion";
 
 
-function MyApp({ Component, pageProps, router }) {
+function MyApp({ Component, pageProps }) {
   return (
     <div>
-      <AnimatePresence initial={false} >
+      <AnimateSharedLayout>
         <Navbar />
-        <Component key={router.route} {...pageProps} />
-      </AnimatePresence>
+        <Component {...pageProps} />
+      </AnimateSharedLayout>
     </div>
   );
 }

@@ -72,21 +72,15 @@ export default function Project({ project }) {
         <div>
           <div className={styles.image_container}>
             <motion.img
+            layoutId="image"
               className={styles.project_image}
-              initial={{ scale: 1.3 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
               src={project.mainImage.url}
               width={500}
               alt={project.name}
             />
           </div>
           <div className={styles.title_container}>
-            <motion.h2
-            initial={{ y: "100%", opacity: "0" }}
-            animate={{ y: "0%", opacity: "1" }}
-            transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }} 
-            className={styles.title}>{project.title}</motion.h2>
+            <motion.h1 layoutId="title" className={styles.title}>{project.title}</motion.h1>
           </div>
           <ul>
             {project.tags.map((tag) => (

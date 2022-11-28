@@ -50,12 +50,21 @@ export default function Home({ projects }) {
       <main className={styles.main}>
         <div>
           {projects.map(({ id, title, mainImage, slug, tags }) => (
-            <ul key={slug}>
-              <li>
-                <Link href={`/projects/${slug}`}>{title}</Link> <br />
-                <img src={mainImage.url} alt={title} width={500} />
-              </li>
-            </ul>
+            <div key={slug}>
+              <div>
+                <Link href={`/projects/${slug}`}>
+                  <motion.h1 layoutId="title">{title}</motion.h1>
+                </Link>
+                <div>
+                  <motion.img
+                    layoutId="image"
+                    src={mainImage.url}
+                    alt={title}
+                    width={500}
+                  />
+                </div>
+              </div>
+            </div>
           ))}
         </div>
 
