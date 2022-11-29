@@ -4,7 +4,6 @@
 }
 
 .container {
-    max-width: 1200px;
     display: flex;
     flex-direction: column;
 }
@@ -31,3 +30,46 @@
     font-size: 5rem;
     font-weight: bolder;
 }
+
+.container {
+    position: relative;
+    width: 100%;
+    justify-items: center;
+    align-content: center;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+}
+
+.back {
+    background-color: transparent;
+    border: none;
+    background-color: rgb(164, 255, 199);
+    height: 100%;
+    padding: 0 2rem;
+    cursor: pointer;
+}
+
+.ttl {
+    background-color: rgb(164, 255, 199);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 2rem;
+    border-radius: 500px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    align-content: center;
+    justify-content: space-between;
+    margin: 0 2rem;
+    
+}
+

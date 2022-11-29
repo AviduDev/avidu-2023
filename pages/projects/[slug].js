@@ -3,6 +3,7 @@ import Head from "next/head";
 import styles from "../../styles/Projects.module.css";
 
 import { motion } from "framer-motion";
+import { AnimateSharedLayout, AnimatePresence } from "framer-motion";
 
 import { GraphQLClient } from "graphql-request";
 
@@ -72,7 +73,6 @@ export default function Project({ project }) {
         <div>
           <div className={styles.image_container}>
             <motion.img
-            layoutId="image"
               className={styles.project_image}
               src={project.mainImage.url}
               width={500}
@@ -80,7 +80,7 @@ export default function Project({ project }) {
             />
           </div>
           <div className={styles.title_container}>
-            <motion.h1 layoutId="title" className={styles.title}>{project.title}</motion.h1>
+            <h1 className={styles.title}>{project.title}</h1>
           </div>
           <ul>
             {project.tags.map((tag) => (

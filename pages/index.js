@@ -3,42 +3,9 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 
-import { GraphQLClient } from "graphql-request";
-import { gql } from "graphql-request";
-
-const hygraph = new GraphQLClient(
-  "https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/cl9s32g1q2oun01td822bh5s6/master"
-);
-
-const QUERY = gql`
-  {
-    projects {
-      id
-      title
-      slug
-      tags
-      mainImage {
-        url
-        width
-        height
-      }
-    }
-  }
-`;
-
-export async function getStaticProps() {
-  const { projects } = await hygraph.request(QUERY);
-
-  return {
-    props: {
-      projects,
-    },
-  };
-}
-
-export default function Home({ projects }) {
+export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
@@ -48,30 +15,18 @@ export default function Home({ projects }) {
       </Head>
 
       <main className={styles.main}>
-        <div>
-          {projects.map(({ id, title, mainImage, slug, tags }) => (
-            <div key={slug}>
-              <div>
-                <Link href={`/projects/${slug}`}>
-                  <motion.h1 layoutId="title">{title}</motion.h1>
-                </Link>
-                <div>
-                  <motion.img
-                    layoutId="image"
-                    src={mainImage.url}
-                    alt={title}
-                    width={500}
-                  />
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <h1>Avidu</h1>
-        <h2 id="about">About Me</h2>
-        <h2 id="work">Work</h2>
-        <h2 id="contact">Contact</h2>
+        <motion.div layoutId="projects" className={styles.item1}>
+          <Link className={styles.link1} href="/projects"><h1>Projects</h1></Link>
+        </motion.div>
+        <motion.div layoutId="services" className={styles.item2}>
+          <Link className={styles.link2} href="/services"><h1>Services</h1></Link>
+        </motion.div>
+        <motion.div layoutId="about" className={styles.item3}>
+          <Link className={styles.link3} href="/about"><h1>About</h1></Link>
+        </motion.div>
+        <motion.div layoutId="contact" className={styles.item4}>
+          <Link className={styles.link4} href="/contact"><h1>Contact</h1></Link>
+        </motion.div>
       </main>
 
       <footer className={styles.footer}>

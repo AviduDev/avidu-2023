@@ -19,3 +19,13 @@ a {
 main {
   margin: 0 auto;
 }
+
+h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  color: rgb(0, 0, 0);
+  background: rgb(151, 222, 255);
+}
