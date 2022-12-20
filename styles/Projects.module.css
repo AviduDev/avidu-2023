@@ -39,9 +39,12 @@
 }
 
 .main {
+    background-color: rgb(255, 217, 217);
     display: flex;
     flex-direction: column;
     width: 1200px;
+    justify-content: center;
+    align-items: center;
 }
 
 .back {

@@ -9,7 +9,22 @@ export default function Services() {
   return (
     <div>
       <Head>
-        <title>Services</title>
+        <title>Services | Web Designer and Developer from Sri Lanka</title>
+        <meta
+          name="description"
+          content="Other than web design and development, avidu offers most of web related services you can learn about them here."
+        />
+        <meta name="robots" content="all" />
+        <link rel="canonical" href="https://avidu.me/" />
+        <meta
+          property="og:title"
+          content="Services | Web Designer and Developer from Sri Lanka"
+        />
+        <meta
+          property="og:description"
+          content="Other than web design and development, avidu offers most of web related services you can learn about them here."
+        />
+        <meta property="og:image" content="" />
       </Head>
       <nav className={styles.nav}>
         <button

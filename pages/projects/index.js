@@ -48,7 +48,22 @@ export default function Projects({ projects }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Projects</title>
+        <title>Projects | Web Designer and Developer from Sri Lanka</title>
+        <meta
+          name="description"
+          content="Browse his most of web design, post design and other development related works. You can contact him for more details."
+        />
+        <meta name="robots" content="all" />
+        <link rel="canonical" href="https://avidu.me/projects" />
+        <meta
+          property="og:title"
+          content="Projects | Web Designer and Developer from Sri Lanka"
+        />
+        <meta
+          property="og:description"
+          content="Browse his most of web design, post design and other development related works. You can contact him for more details."
+        />
+        <meta property="og:image" content="" />
       </Head>
 
       <nav className={styles.nav}>
@@ -63,7 +78,7 @@ export default function Projects({ projects }) {
           Projects
         </motion.h1>
       </nav>
-      
+
       <main className={styles.main}>
         <div>
           {projects.map(({ id, title, mainImage, slug, tags }) => (

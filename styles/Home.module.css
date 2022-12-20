@@ -10,11 +10,17 @@
   gap: 1rem;
 }
 
-.item1, .item2, .item3, .item4 {
+.item1,
+.item2,
+.item3,
+.item4 {
   position: relative;
 }
 
-.link1, .link2, .link3, .link4 {
+.link1,
+.link2,
+.link3,
+.link4 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,7 +41,29 @@
   background-color: rgb(164, 237, 255);
 }
 .link4 {
-  background-color: rgb(255, 164, 225);
+  background-color: rgb(212, 137, 187);
+}
+
+.socialIcon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin-right: 20px;
+}
+
+.socialIcon img {
+  width: 100px;
+  height: ;
+}
+
+.socialIcons {
+  display: flex;
+  flex-direction: row;
 }
 
 
@@ -44,21 +72,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* ---------------------------------------------------------------------- */
 
 .footer {
   display: flex;
