@@ -49,20 +49,17 @@ export default function Home() {
             <h1>Contact</h1>
           </Link>
         </motion.div>
-        <div className={styles.socialIcons}>
-          <Link
-            href="https://github.com/AviduDev"
-            target="blank"
-            className={styles.socialIcon}
-          >
-            <img src="github.svg" alt="" />
+        <div className={styles.item5}>
+          <Link className={styles.link5} href="/">
+            <h1>Merch↗</h1>
           </Link>
-          <Link
-            href="https://www.linkedin.com/in/avidu-web-designer-from-sri-lanka/"
-            target="blank"
-            className={styles.socialIcon}
-          >
+        </div>
+        <div className={styles.socialIcons}>
+          <Link className={styles.socialIcon} href="https://www.linkedin.com/in/avidu-web-designer-from-sri-lanka/" target="blank">
             <img src="linkedin.svg" alt="" />
+          </Link>
+          <Link className={styles.socialIcon} href="https://github.com/AviduDev" target="blank">
+            <img src="github.svg" alt="" />
           </Link>
         </div>
       </main>
