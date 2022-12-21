@@ -28,6 +28,7 @@ const QUERY = gql`
         height
         id
       }
+      year
     }
   }
 `;
@@ -81,14 +82,21 @@ export default function Projects({ projects }) {
 
       <main className={styles.main}>
         <div>
-          {projects.map(({ id, title, mainImage, slug, tags }) => (
+          {projects.map(({ id, title, mainImage, slug, tags, year }) => (
             <div key={slug}>
               <div>
                 <Link href={`/projects/${slug}`}>
                   <h1>{title}</h1>
                 </Link>
                 <div>
-                  <motion.img src={mainImage.url} alt={title} width={500} />
+                  <ul>
+                    {tags.map((tag) => (
+                      <li key={tag}>{tag}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <p>{year}</p>
                 </div>
               </div>
             </div>
