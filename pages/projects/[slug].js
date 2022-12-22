@@ -69,17 +69,16 @@ export default function Project({ project }) {
   return (
     <div className={styles.wrapper}>
       <Head>
-        <title>{project.title} | Web Designer and Developer from Sri Lanka</title>
+        <title>
+          {project.title} | Web Designer and Developer from Sri Lanka
+        </title>
         <meta
           name="description"
           content="Avidu is a creative web designer and developer from sri lanka, build fast, scalable and cost effective websites using modern technologies."
         />
         <meta name="robots" content="all" />
         <link rel="canonical" href="https://avidu.me/${slug}" />
-        <meta
-          property="og:title"
-          content={project.title}
-        />
+        <meta property="og:title" content={project.title} />
         <meta
           property="og:description"
           content="Avidu is a creative web designer and developer from sri lanka, build fast, scalable and cost effective websites using modern technologies."
