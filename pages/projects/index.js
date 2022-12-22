@@ -103,7 +103,7 @@ export default function Projects({ projects }) {
                 </div>
               </div>
               <Link href={`/projects/${slug}`} className={styles.caseButton}>
-                <img className={styles.buttonImage} src={mainImage} alt="" width="100%" height="100%" />
+                <img className={styles.buttonImage} src={mainImage.url} alt="" width="100%" height="100%" />
                 <button>⟶</button>
               </Link>
             </div>

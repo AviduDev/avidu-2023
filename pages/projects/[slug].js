@@ -88,7 +88,7 @@ export default function Project({ project }) {
       <main className={styles.container}>
         <div>
           <div className={styles.image_container}>
-            <motion.img
+            <img
               className={styles.project_image}
               src={project.mainImage.url}
               width={500}
