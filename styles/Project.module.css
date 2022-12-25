@@ -1,2 +1,38 @@
 .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projectContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+}
+
+.details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+}
+
+.boldText {
+    font-weight: 900;
+}
+
+.linkContainer {
+    background-color: rgb(145, 224, 255);
+    display: flex;
+    align-items: center;
+    padding: 2vh;
+    border-radius: 500px;
+}
+
+.linkItem {
+    margin: 0.5vh;
+}
+
+.linkItem link {
+    text-decoration: underline;
 }

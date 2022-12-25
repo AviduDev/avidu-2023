@@ -135,19 +135,40 @@ export default function Project({ project }) {
               <li key={tag}>{tag}</li>
             ))}
           </ul>
-          <div>
-            <p className={styles.company}>
-              <span className={styles.boldText}>Company: </span>
-              {project.company}
-            </p>
-            <p className={styles.collaboration}>
-              <span className={styles.boldText}>Collaboration: </span>
-              {project.collaboration}
-            </p>
-            <p className={styles.year}>{project.year}</p>
-            <Link href={project.liveSite}>Live↗</Link> <br />
-            <Link href={project.sourceUrl}>Source↗</Link> <br />
-            <Link href={project.demoUrl}>Demo↗</Link> <br />
+          <div className={styles.linkContainer}>
+            <div className={styles.linkItem}>
+              <p className={styles.company}>
+                <span className={styles.boldText}>Company: </span>
+                {project.company}
+              </p>
+            </div>
+            <div className={styles.linkItem}>
+              <p className={styles.collaboration}>
+                <span className={styles.boldText}>Collaboration: </span>
+                {project.collaboration}
+              </p>
+            </div>
+            <div className={styles.linkItem}>
+              <p className={styles.year}>
+                <span className={styles.boldText}>Year: </span> {project.year}
+              </p>
+            </div>
+
+            <div className={styles.linkItem}>
+              <Link href={project.liveSite} target="blank">
+                Live↗
+              </Link>
+            </div>
+            <div className={styles.linkItem}>
+              <Link href={project.sourceUrl} target="blank">
+                Source↗
+              </Link>
+            </div>
+            <div className={styles.linkItem}>
+              <Link href={project.demoUrl} target="blank">
+                Demo↗
+              </Link>
+            </div>
           </div>
           <div className={styles.detailsContainer}>
             <div className={styles.details}>
@@ -163,50 +184,76 @@ export default function Project({ project }) {
               </div>
             </div>
 
+            <hr />
+
             <div className={styles.details}>
               <div className={styles.sectionTitle}>
                 <h3>Used Tools</h3>
               </div>
               <div className={styles.sectionDetails}>
-                <div dangerouslySetInnerHTML={{ __html: project.usedTools.html }}></div>
+                <div
+                  dangerouslySetInnerHTML={{ __html: project.usedTools.html }}
+                ></div>
               </div>
             </div>
+
+            <hr />
 
             <div className={styles.details}>
               <div className={styles.sectionTitle}>
                 <h3>Goals</h3>
               </div>
               <div className={styles.sectionDetails}>
-                <div dangerouslySetInnerHTML={{ __html: project.goals.html }}></div>
+                <div
+                  dangerouslySetInnerHTML={{ __html: project.goals.html }}
+                ></div>
               </div>
             </div>
+
+            <hr />
 
             <div className={styles.details}>
               <div className={styles.sectionTitle}>
                 <h3>Problems</h3>
               </div>
               <div className={styles.sectionDetails}>
-                <div dangerouslySetInnerHTML={{ __html: project.problems.html }}></div>
+                <div
+                  dangerouslySetInnerHTML={{ __html: project.problems.html }}
+                ></div>
               </div>
             </div>
+
+            <hr />
 
             <div className={styles.details}>
               <div className={styles.sectionTitle}>
                 <h3>Proposed Solutions</h3>
               </div>
               <div className={styles.sectionDetails}>
-                <div dangerouslySetInnerHTML={{ __html: project.proposedSolution.html }}></div>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: project.proposedSolution.html,
+                  }}
+                ></div>
               </div>
             </div>
+
+            <hr />
 
             <div className={styles.details}>
               <div className={styles.sectionTitle}>
                 <h3>Project Scope</h3>
               </div>
               <div className={styles.sectionDetails}>
-                <div dangerouslySetInnerHTML={{ __html: project.projectScope.html }}></div>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: project.projectScope.html,
+                  }}
+                ></div>
               </div>
             </div>
+
+            <hr />
 
             <div className={styles.galleryImages}></div>
           </div>
