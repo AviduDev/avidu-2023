@@ -27,5 +27,5 @@ h1, h2, h3 {
 
 ::selection {
   color: rgb(0, 0, 0);
-  background: rgb(151, 222, 255);
+  background: #0084ff54;
 }

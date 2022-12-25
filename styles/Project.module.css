@@ -21,12 +21,49 @@
     font-weight: 900;
 }
 
+
+.image_container,
+.project_image {
+    width: 100%;
+}
+
+.projectTitle {
+    max-width: 900px;
+    font-size: 6vh;
+    margin: 3vh;
+}
+
+.projectDescription {
+    max-width: 800px;
+    font-size: 2vh;
+    margin: 0.5vh;
+}
+
+.project_image {
+    max-height: 80vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+.tags {
+    list-style: none;
+    display: flex;
+}
+
+.tag {
+    background-color: rgb(145, 224, 255);
+    margin: 1vh;
+    padding: 1vh;
+    border-radius: 500px;
+}
+
 .linkContainer {
     background-color: rgb(145, 224, 255);
     display: flex;
     align-items: center;
     padding: 2vh;
     border-radius: 500px;
+    margin: 5vh;
 }
 
 .linkItem {
@@ -35,4 +72,22 @@
 
 .linkItem link {
     text-decoration: underline;
+}
+
+.details {
+    margin: 2vh 0 2vh 0;
+}
+
+.sectionTitle {
+    font-size: 2.5vh;
+}
+
+.sectionDetails {
+    font-size: 2vh;
+}
+
+.galleryImage img {
+    max-width: 90vw;
+    border-radius: 25px;
+    margin: 0.5vh;
 }

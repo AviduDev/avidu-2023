@@ -53,9 +53,8 @@ export async function getStaticProps({ params }) {
           html
         }
         galleryImages {
-          url
-          width
-          height
+          html
+         
         }
       }
     }
@@ -78,12 +77,41 @@ export async function getStaticPaths() {
       projects {
         id
         title
-        slug
-        tags
         mainImage {
           url
           width
           height
+        }
+        slug
+        description
+        tags
+        year
+        company
+        collaboration
+        liveSite
+        sourceUrl
+        design
+        demoUrl
+        providedServices {
+          html
+        }
+        usedTools {
+          html
+        }
+        goals {
+          html
+        }
+        problems {
+          html
+        }
+        proposedSolution {
+          html
+        }
+        projectScope {
+          html
+        }
+        galleryImages {
+          html
         }
       }
     }
@@ -119,6 +147,8 @@ export default function Project({ project }) {
       </Head>
 
       <main className={styles.main}>
+        {/* ------------------------Project Image------------------------ */}
+
         <div className={styles.image_container}>
           <img
             className={styles.project_image}
@@ -127,14 +157,22 @@ export default function Project({ project }) {
             alt={project.name}
           />
         </div>
+
+        {/* ------------------------Project Details Container------------------------ */}
+
         <div className={styles.projectContainer}>
-          <h1 className={styles.title}>{project.title}</h1>
-          <p className={styles.description}>{project.description}</p>
-          <ul>
+          <h1 className={styles.projectTitle}>{project.title}</h1>
+          <p className={styles.projectDescription}>{project.description}</p>
+          <ul className={styles.tags}>
             {project.tags.map((tag) => (
-              <li key={tag}>{tag}</li>
+              <li className={styles.tag} key={tag}>
+                {tag}
+              </li>
             ))}
           </ul>
+
+          {/* ------------------------Project Link Box------------------------ */}
+
           <div className={styles.linkContainer}>
             <div className={styles.linkItem}>
               <p className={styles.company}>
@@ -165,11 +203,14 @@ export default function Project({ project }) {
               </Link>
             </div>
             <div className={styles.linkItem}>
-              <Link href={project.demoUrl} target="blank">
-                Demo↗
+              <Link href={project.design} target="blank">
+                Design↗
               </Link>
             </div>
           </div>
+
+          {/* ------------------------Project Case Study------------------------ */}
+
           <div className={styles.detailsContainer}>
             <div className={styles.details}>
               <div className={styles.sectionTitle}>
@@ -253,10 +294,18 @@ export default function Project({ project }) {
               </div>
             </div>
 
-            <hr />
-
-            <div className={styles.galleryImages}></div>
           </div>
+
+          <div className={styles.galleryImages}>
+            <div
+              className={styles.galleryImage}
+              dangerouslySetInnerHTML={{
+                __html: project.galleryImages.html,
+              }}
+            ></div>
+          </div>
+
+
         </div>
       </main>
     </div>
