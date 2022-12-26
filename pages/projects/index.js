@@ -83,29 +83,37 @@ export default function Projects({ projects }) {
       <main className={styles.main}>
         <div>
           {projects.map(({ id, title, mainImage, slug, tags, year }) => (
-            <div className={styles.projectMain} key={id}>
-              <div className={styles.projectContainer}>
+            <div className={styles.projectContainer} key={id}>
+              <img
+                className={styles.projectImage}
+                src={mainImage.url}
+                alt={title}
+                width="100%"
+                height="100%"
+              />
+              <div className={styles.projectDetails}>
                 <Link
                   className={styles.projectTitle}
                   href={`/projects/${slug}`}
                 >
                   <h1>{title}</h1>
                 </Link>
-                
-                  <div className={styles.tags}>
-                    {tags.map((tag) => (
-                      <div className={styles.tag} key={tag}>{tag}</div>
-                    ))}
-                
+
+                <div className={styles.tags}>
+                  {tags.map((tag) => (
+                    <div className={styles.tag} key={tag}>
+                      {tag}
+                    </div>
+                  ))}
                 </div>
-                <div className={styles.year}>
-                  {year}
-                </div>
+                <div className={styles.year}>{year}</div>
+                <Link
+                  href={`/projects/${slug}`}
+                  className={styles.projectButton}
+                >
+                  <button>Case Study⟶</button>
+                </Link>
               </div>
-              <Link href={`/projects/${slug}`} className={styles.caseButton}>
-                <img className={styles.buttonImage} src={mainImage.url} alt="" width="100%" height="100%" />
-                <button>⟶</button>
-              </Link>
             </div>
           ))}
         </div>
