@@ -106,7 +106,6 @@ export default function Projects({ projects }) {
                     </div>
                   ))}
                 </div>
-                <div className={styles.year}>{year}</div>
                 <Link
                   href={`/projects/${slug}`}
                   className={styles.projectButton}

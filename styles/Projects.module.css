@@ -40,6 +40,10 @@
   margin: 1vh;
 }
 
+.projectTitle h1 {
+  margin: 1vh 0vh 1vh 0vh;
+}
+
 .projectDetails {
   position: absolute;
   bottom: 1vh;
@@ -47,9 +51,37 @@
   background-color: #a3ffc6;
   max-width: 50%;
   padding: 1vh;
-  border-radius: 1vh;
+  border-radius: 0.5vh;
+}
+
+.tags {
+  display: flex;
+}
+
+.tag {
+  background-color: #006125;
+  margin-right: 1vh;
+  padding: 0.5vh;
+  border-radius: 500px;
+  color: white;
 }
 
 .projectButton button {
   cursor: pointer;
+  background: #006125;
+  color: white;
+  padding: 1vh;
+  border-radius: 500px;
+  border: none;
+  margin: 1vh 0 1vh 0;
+  font-size: 2vh;
+  font-weight: 900;
+  transition: 0.2s ease;
 }
+
+.projectButton button:hover {
+  transform: scale(1.1);
+  transition: 0.5s ease;
+}
+
+
