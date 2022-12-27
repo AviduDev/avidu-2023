@@ -38,8 +38,24 @@ export default function Contact() {
           Contact
         </motion.h1>
       </nav>
+
       <main>
         <h1>Contact</h1>
+        <div>
+          <form
+            method="POST"
+            action="https://formsubmit.co/your@email.com"
+            enctype="multipart/form-data"
+          >
+            <input type="text" name="name" required placeholder="Your name" />
+            <input type="email" name="email" placeholder="Your email" />
+            <textarea name="message" placeholder="Details of your problem" />
+            <input type="hidden" name="_subject" value="New submission!" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="box"></input>
+            <button type="submit">Send Test</button>
+          </form>
+        </div>
       </main>
     </div>
   );
