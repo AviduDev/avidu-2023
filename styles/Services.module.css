@@ -1,7 +1,7 @@
 .back {
     background-color: transparent;
     border: none;
-    background-color: rgb(249, 255, 164);
+    background-color: #f9ffa4;
     height: 100%;
     padding: 0 2rem;
     cursor: pointer;
@@ -27,3 +27,32 @@
     
 }
 
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --------------------services-------------------- */
+
+.service {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 1vh;
+}
+
+.titleBox {
+    color: black;
+    background-color: #f9ffa4;
+    font-size: 3vh;
+}
+
+.titleBox h2 {
+    padding: 1vh;
+}
+
+.detailsBox {
+    margin: 1vh;
+}

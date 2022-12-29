@@ -82,7 +82,7 @@ export default function Projects({ projects }) {
 
       <main className={styles.main}>
         <div>
-          {projects.map(({ id, title, mainImage, slug, tags, year }) => (
+          {projects.map(({ id, title, mainImage, slug, tags }) => (
             <div className={styles.projectContainer} key={id}>
               <img
                 className={styles.projectImage}
