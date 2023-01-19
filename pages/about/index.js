@@ -156,6 +156,8 @@ export default function About({ bios }) {
                 </div>
               </div>
 
+              <hr className={styles.rule} />
+
               <div className={styles.bio}>
                 <div className={styles.bioTitle}>
                   <h3>Address</h3>
@@ -164,6 +166,8 @@ export default function About({ bios }) {
                   <p>{address}</p>
                 </div>
               </div>
+
+              <hr className={styles.rule} />
 
               <div className={styles.bio}>
                 <div className={styles.bioTitle}>
