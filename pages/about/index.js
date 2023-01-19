@@ -4,7 +4,53 @@ import { motion } from "framer-motion";
 import styles from "../../styles/About.module.css";
 import Image from "next/image";
 
-export default function About() {
+import { GraphQLClient } from "graphql-request";
+import { gql } from "graphql-request";
+
+// ---------------------Fetching Data-------------------
+
+const hygraph = new GraphQLClient(
+  "https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/cl9s32g1q2oun01td822bh5s6/master"
+);
+
+const QUERY = gql`
+  {
+    bios {
+      id
+      fullName
+      nameWithInitials
+      dob
+      address
+      maritalStatus
+      vision {
+        html
+      }
+      values {
+        html
+      }
+      education {
+        html
+      }
+      experience {
+        html
+      }
+    }
+  }
+`;
+
+export async function getStaticProps() {
+  const { bios } = await hygraph.request(QUERY);
+
+  return {
+    props: {
+      bios,
+    },
+  };
+}
+
+// -------------------------------------------------------------------
+
+export default function About({ bios }) {
   const router = useRouter();
 
   return (
@@ -64,19 +110,146 @@ export default function About() {
           </h1>
         </div>
 
-        <div className={styles.bioContainer}>
-          <div className={styles.bio}>
-            <div className={styles.bioTitle}>
-              <h3>Full Name</h3>
+        {bios.map(
+          ({
+            id,
+            fullName,
+            nameWithInitials,
+            dob,
+            address,
+            maritalStatus,
+            vision,
+            values,
+            experience,
+            education,
+          }) => (
+            <div className={styles.bioContainer} key={id}>
+
+              <div className={styles.bio}>
+                <div className={styles.bioTitle}>
+                  <h3>Full Name</h3>
+                </div>
+                <div className={styles.bioDetails}>
+                  <p>{fullName}</p>
+                </div>
+              </div>
+
+              <hr className={styles.rule} />
+
+              <div className={styles.bio}>
+                <div className={styles.bioTitle}>
+                  <h3>Name With Initials</h3>
+                </div>
+                <div className={styles.bioDetails}>
+                  <p>{nameWithInitials}</p>
+                </div>
+              </div>
+
+              <hr className={styles.rule} />
+
+              <div className={styles.bio}>
+                <div className={styles.bioTitle}>
+                  <h3>{dob}</h3>
+                </div>
+                <div className={styles.bioDetails}>
+                  <p>1997-12-30</p>
+                </div>
+              </div>
+
+              <div className={styles.bio}>
+                <div className={styles.bioTitle}>
+                  <h3>Address</h3>
+                </div>
+                <div className={styles.bioDetails}>
+                  <p>{address}</p>
+                </div>
+              </div>
+
+              <div className={styles.bio}>
+                <div className={styles.bioTitle}>
+                  <h3>Marital Status</h3>
+                </div>
+                <div className={styles.bioDetails}>
+                  <p>{maritalStatus}</p>
+                </div>
+              </div>
+
+              <hr className={styles.rule} />
+
+              <div>
+                <h2>Process</h2>
+                <div>
+                  <div>1</div>
+                  <div>2</div>
+                  <div>3</div>
+                  <div>4</div>
+                  <div>5</div>
+                  <div>6</div>
+                </div>
+              </div>
+
+              <hr className={styles.rule} />
+
+              <div className={styles.bio}>
+                <div className={styles.bioTitle}>
+                  <h3>Vision</h3>
+                </div>
+                <div className={styles.bioDetails}>
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: vision.html,
+                    }}
+                  ></div>
+                </div>
+              </div>
+
+              <hr className={styles.rule} />
+
+              <div className={styles.bio}>
+                <div className={styles.bioTitle}>
+                  <h3>Values</h3>
+                </div>
+                <div className={styles.bioDetails}>
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: values.html,
+                    }}
+                  ></div>
+                </div>
+              </div>
+
+              <hr className={styles.rule} />
+
+              <div className={styles.bio}>
+                <div className={styles.bioTitle}>
+                  <h3>Education</h3>
+                </div>
+                <div className={styles.bioDetails}>
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: education.html,
+                    }}
+                  ></div>
+                </div>
+              </div>
+
+              <hr className={styles.rule} />
+
+              <div className={styles.bio}>
+                <div className={styles.bioTitle}>
+                  <h3>Experience</h3>
+                </div>
+                <div className={styles.bioDetails}>
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: experience.html,
+                    }}
+                  ></div>
+                </div>
+              </div>
             </div>
-            <div className={styles.bioDetails}>
-              <p>Avidu Sampath Bandara</p>
-            </div>
-
-          </div>
-
-
-        </div>
+          )
+        )}
       </main>
 
       {/* ---------------------footer------------------------- */}
