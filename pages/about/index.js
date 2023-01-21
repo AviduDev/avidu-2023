@@ -149,10 +149,10 @@ export default function About({ bios }) {
 
               <div className={styles.bio}>
                 <div className={styles.bioTitle}>
-                  <h3>{dob}</h3>
+                  <h3>DOB</h3>
                 </div>
                 <div className={styles.bioDetails}>
-                  <p>1997-12-30</p>
+                  <p>{dob}</p>
                 </div>
               </div>
 
@@ -182,13 +182,13 @@ export default function About({ bios }) {
 
               <div>
                 <h2>Process</h2>
-                <div>
-                  <div>1</div>
-                  <div>2</div>
-                  <div>3</div>
-                  <div>4</div>
-                  <div>5</div>
-                  <div>6</div>
+                <div className={styles.processGrid}>
+                  <div className={styles.processItem}><p>1</p><h3>Initial Discussion</h3></div>
+                  <div className={styles.processItem}><p>2</p><h3>Design</h3></div>
+                  <div className={styles.processItem}><p>3</p><h3>Approve</h3></div>
+                  <div className={styles.processItem}><p>4</p><h3>Development</h3></div>
+                  <div className={styles.processItem}><p>5</p><h3>Testing</h3></div>
+                  <div className={styles.processItem}><p>6</p><h3>Deploying</h3></div>
                 </div>
               </div>
 
