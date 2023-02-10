@@ -6,23 +6,15 @@
   align-items: center;
 }
 
-.back {
-  background-color: transparent;
-  border: none;
-  background-color: #a3ffc6;
-  height: 100%;
-  padding: 0 2rem;
-  cursor: pointer;
-}
 
 .ttl {
-  background-color: rgb(164, 255, 199);
+  text-transform: uppercase;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0 2rem;
-  border-radius: 500px;
+  z-index: 10;
 }
 
 .nav {
@@ -30,7 +22,7 @@
   flex-direction: row;
   height: 100px;
   align-content: center;
-  justify-content: space-between;
+  justify-content: center;
   margin: 0 2rem;
 }
 

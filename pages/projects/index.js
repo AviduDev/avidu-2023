@@ -68,16 +68,9 @@ export default function Projects({ projects }) {
       </Head>
 
       <nav className={styles.nav}>
-        <button
-          className={styles.back}
-          type="button"
-          onClick={() => router.back()}
-        >
-          Back
-        </button>
-        <motion.h1 layoutId="projects" className={styles.ttl}>
+        <motion.h2 layoutId="projects" className={styles.ttl}>
           Projects
-        </motion.h1>
+        </motion.h2>
       </nav>
 
       <main className={styles.main}>

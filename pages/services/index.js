@@ -67,13 +67,6 @@ export default function Services({ services }) {
       {/* -------------------------------NAV---------------------------------- */}
 
       <nav className={styles.nav}>
-        <button
-          className={styles.back}
-          type="button"
-          onClick={() => router.back()}
-        >
-          Back
-        </button>
         <motion.h1 layoutId="services" className={styles.ttl}>
           Services
         </motion.h1>
@@ -93,7 +86,7 @@ export default function Services({ services }) {
               relatedTools,
             }) => (
               <div className={styles.service} key={id}>
-                <div className={styles.titleBox}>
+                <div id="web" className={styles.titleBox}>
                   <h2>{serviceTitle}</h2>
                 </div>
                 <div className={styles.detailsBox}>

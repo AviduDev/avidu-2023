@@ -28,13 +28,6 @@ export default function Contact() {
       </Head>
 
       <nav className={styles.nav}>
-        <button
-          className={styles.back}
-          type="button"
-          onClick={() => router.back()}
-        >
-          Back
-        </button>
         <motion.h1 layoutId="contact" className={styles.ttl}>
           Contact
         </motion.h1>

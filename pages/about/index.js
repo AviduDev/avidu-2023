@@ -77,13 +77,6 @@ export default function About({ bios }) {
       {/* ----------------------------NAV---------------------------- */}
 
       <nav className={styles.nav}>
-        <button
-          className={styles.back}
-          type="button"
-          onClick={() => router.back()}
-        >
-          Back
-        </button>
         <motion.h1 layoutId="about" className={styles.ttl}>
           About
         </motion.h1>

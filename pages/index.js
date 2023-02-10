@@ -4,6 +4,10 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
+import Hero from "../components/Hero";
+import Navbar from "../components/Navbar";
+import Description from "../components/Description";
+import Services from "../components/Services"
 
 export default function Home() {
   return (
@@ -29,39 +33,17 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <motion.div layoutId="projects" className={styles.item1}>
-          <Link className={styles.link1} href="/projects">
-            <h1>Projects</h1>
-          </Link>
-        </motion.div>
-        <motion.div layoutId="services" className={styles.item2}>
-          <Link className={styles.link2} href="/services">
-            <h1>Services</h1>
-          </Link>
-        </motion.div>
-        <motion.div layoutId="about" className={styles.item3}>
-          <Link className={styles.link3} href="/about">
-            <h1>About</h1>
-          </Link>
-        </motion.div>
-        <motion.div layoutId="contact" className={styles.item4}>
-          <Link className={styles.link4} href="/contact">
-            <h1>Contact</h1>
-          </Link>
-        </motion.div>
-        <div className={styles.item5}>
-          <Link className={styles.link5} href="/">
-            <h1>Merch↗</h1>
-          </Link>
-        </div>
-        <div className={styles.socialIcons}>
-          <Link className={styles.socialIcon} href="https://www.linkedin.com/in/avidu-web-designer-from-sri-lanka/" target="blank">
-            <img src="linkedin.svg" alt="" />
-          </Link>
-          <Link className={styles.socialIcon} href="https://github.com/AviduDev" target="blank">
-            <img src="github.svg" alt="" />
-          </Link>
-        </div>
+        {/* ---------------------------------------------------------- */}
+        <Hero />
+        {/* ---------------------------------------------------------- */}
+        <Navbar />
+        {/* ---------------------------------------------------------- */}
+        <Description />
+        {/* ---------------------------------------------------------- */}
+        <Services />
+        {/* ---------------------------------------------------------- */}
+        {/* ---------------------------------------------------------- */}
+        {/* ---------------------------------------------------------- */}
       </main>
 
       <footer className={styles.footer}>
@@ -71,7 +53,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           Powered by{" "}
-          <span className={styles.logo}>
+          <span id="merch" className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>

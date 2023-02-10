@@ -1,0 +1,34 @@
+.section {
+    padding: 1vw;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+    justify-content: space-between;
+}
+
+.section h1 {
+    font-size: 15vw;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.socialLinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-decoration: underline;
+}
+
+.locationCtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.available {
+    background-color: rgb(137, 255, 143);
+    padding: 1vw;
+    border-radius: 500px;
+}

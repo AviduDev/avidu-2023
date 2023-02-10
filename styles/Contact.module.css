@@ -1,20 +1,13 @@
-.back {
-  background-color: transparent;
-  border: none;
-  background-color: #ffa4e1;
-  height: 100%;
-  padding: 0 2rem;
-  cursor: pointer;
-}
-
 .ttl {
-  background-color: rgb(255, 164, 225);
+  text-transform: uppercase;
+  font-size: 8vw;
+  font-weight: 900;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0 2rem;
-  border-radius: 500px;
+  z-index: 10;
 }
 
 .nav {
@@ -22,7 +15,7 @@
   flex-direction: row;
   height: 100px;
   align-content: center;
-  justify-content: space-between;
+  justify-content: center;
   margin: 0 2rem;
 }
 
