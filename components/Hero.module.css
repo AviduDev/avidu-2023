@@ -32,3 +32,11 @@
     padding: 1vw;
     border-radius: 500px;
 }
+
+.notice {
+    padding: 2vw;
+    border-radius: 1vw;
+    background-color: #ffe77e;
+    text-align: center;
+    font-size: 1vw;
+}
